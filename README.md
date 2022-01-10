@@ -1,6 +1,6 @@
 # ModConfigDynVarBridge
 
-A [NeosModLoader](https://github.com/zkxs/NeosModLoader) mod for [Neos VR](https://neos.com/) that exposes Mod configs to DynamicVariables and applys changes to the config.
+A [NeosModLoader](https://github.com/zkxs/NeosModLoader) mod for [Neos VR](https://neos.com/) that exposes Mod configs to DynamicVariables in your Userspace and applys changes to the config.
 
 
 **WIP**
