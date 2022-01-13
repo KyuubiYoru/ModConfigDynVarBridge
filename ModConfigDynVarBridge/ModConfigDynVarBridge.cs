@@ -45,7 +45,7 @@ namespace ModConfigDynVarBridge
                         {
                             Slot modConfigSlot = _configSlot.AddSlot(mod.Name);
                             DynamicVariableSpace space =
-                                (DynamicVariableSpace) modConfigSlot.AttachComponent(typeof(DynamicVariableSpace));
+                                (DynamicVariableSpace)__instance.World.RootSlot.AttachComponent(typeof(DynamicVariableSpace));
                             space.OnlyDirectBinding.Value = true;
                             space.SpaceName.Value = mod.Name;
 
@@ -86,7 +86,6 @@ namespace ModConfigDynVarBridge
                     dynVar.Value.Changed += changeable => mod.GetConfiguration().Set(key, ((SyncField<T>) changeable).Value);
 
                     //key.OnChanged += value => dynVar.Value.Value = (T)value;
-
                 }
                 catch (Exception e)
                 {
