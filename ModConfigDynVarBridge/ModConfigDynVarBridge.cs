@@ -12,7 +12,7 @@ namespace ModConfigDynVarBridge
     {
         public override string Name => "ModConfigDynVarBridge";
         public override string Author => "KyuubiYoru";
-        public override string Version => "1.0.0";
+        public override string Version => "1.0.1";
         public override string Link => "https://github.com/GithubUsername/RepoName/";
 
         private static ModConfiguration _config;
