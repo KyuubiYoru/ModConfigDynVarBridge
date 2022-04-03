@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
+using BaseX;
 using FrooxEngine;
 using HarmonyLib;
 using NeosModLoader;
@@ -12,7 +13,7 @@ namespace ModConfigDynVarBridge
     {
         public override string Name => "ModConfigDynVarBridge";
         public override string Author => "KyuubiYoru";
-        public override string Version => "1.0.1";
+        public override string Version => "1.0.2";
         public override string Link => "https://github.com/GithubUsername/RepoName/";
 
         private static ModConfiguration _config;
@@ -74,6 +75,13 @@ namespace ModConfigDynVarBridge
             {
                 try
                 {
+                    //Check if type is supported
+                    if (Coder<T>.Default == null)
+                    {
+                        Debug($"Cannot create dynvar for {key.Name} of type {key.ValueType()}");
+                        return;
+                    }
+
                     DynamicValueVariable<T> dynVar = (DynamicValueVariable<T>) slot.AttachComponent(typeof(DynamicValueVariable<T>));
                     if (dynVar == null)
                     {
